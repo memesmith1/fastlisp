@@ -1,0 +1,19 @@
+fastlisp is a version of the lisp programming language. It's goal is to be the easiest programming language in the world.
+
+Let's get started by looking at a simple program:
+
+(+ (text 2) 
+   (text 2))=>
+(text 4)
+
+what this program does is it adds two and two together producing 4.
+
+Let's look at another example:
+
+(+ (text 12) 
+  (text 17))=>
+(text 29)
+
+Lets look at what this looks like when we have many +.
+
+(+ (text 2) (+ (text 2) (text 7)) (+ (text 11) (text 17))=>
