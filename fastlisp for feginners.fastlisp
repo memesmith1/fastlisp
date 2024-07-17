@@ -1,9 +1,12 @@
+(comment
+
 fastlisp is a version of the lisp programming language. It's goal is to be the easiest programming language in the world.
 
 Let's get started by looking at a simple program:
 
 (+ (text 2) 
    (text 2))=>
+
 (text 4)
 
 what this program does is it adds two and two together producing 4.
@@ -12,8 +15,72 @@ Let's look at another example:
 
 (+ (text 12) 
   (text 17))=>
+
 (text 29)
 
-Lets look at what this looks like when we have many +.
+Lets look at what this looks like when we have many +. We shall see that it has multple steps. Transition from one step to the next is signified by =>.
 
-(+ (text 2) (+ (text 2) (text 7)) (+ (text 11) (text 17))=>
+(+ (text 2) 
+   (+ (+ (text 2)
+       (text 7)) 
+      (+ (text 11)
+         (text 17))))=>
+
+(+ (text 2)
+   (+ (+ (text 2)
+         (text 7))
+      (text 28)))=>
+
+(+ (text 2
+   (+ (text 9)
+      (text 28))))=>
+
+(+ (text 2)
+   (text 37))=>
+
+(text 39)
+
+
+Each step what we are doing is looking for the innermost parentheses and solving it and then rewriting the terms of our current program with that solution in place.
+Then we go back to the beginning of our process and look for the innermost parentheses and solve the problem inside of it. Then we once again rewrite the terms of
+our program with the solution in place. And we keep doing this until there is no further way to reduce our program by rewriting it, and that ends up being the solution
+that the computer came up with.
+
+todo:
+(lambda
+ (evaluation)
+)
+(define
+ (let)
+)
+(arithmetic
+  (comment (addition))
+  (subtraction)
+  (multiplication)
+  (division)
+  (exponentiation)
+  (fractional numbers)
+  (less than)
+  (greater than))
+(logic
+  (and)
+  (or)
+  (not)
+  )
+(branching
+  (if)
+)
+(lists
+ (viero)
+)
+(recursion
+ (z)
+)
+
+
+  
+
+)
+
+
+
