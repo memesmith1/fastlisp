@@ -1,5 +1,5 @@
 (comment
- fastlisp spec 2.3
+ fastlisp spec 2.3.1
  1 jul 2024
  john morris beck
  this is a comment. here we use lambda as let to spawn an environment
@@ -8,7 +8,7 @@
  (comment these are my names)
 ((lambda id 
 
-         (comment this is the pain program)
+         (comment this is the main program)
          (id id id)) 
          
 (comment these are my definitions)         
