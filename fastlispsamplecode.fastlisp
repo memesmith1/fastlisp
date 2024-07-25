@@ -4,11 +4,24 @@
 (lambda ibis
 (lambda kestrel
 (lambda kite
+(lambda viero
 
 (main program)
-(lambda x (lambda y (lambda z (z x y))))
+(lambda f
+        ((lambda x 
+                 (f (lambda v
+                            (x x v))))
+         (lambda x 
+                 (f (lambda v
+                            (x x v))))))
 
 (comment definitions)
+
+(comment viero)
+) (lambda x
+          (lambda y
+                  (lambda z
+                          (z x y))))
 
 (comment kite)
 ) (kestrel ibis)
