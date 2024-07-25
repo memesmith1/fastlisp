@@ -33,6 +33,9 @@
 (lambda <=
 (lambda >=
 
+(comment undefined python functions)
+(lambda get_subobject
+
 (comment sample program names)
 (lambda is-old-enough?
 
@@ -49,6 +52,16 @@ undefined
                true
                false
 ))
+
+(comment get_subobject)
+) (comment text)
+  (lambda object_name
+          (lambda string
+                  (concatenate (text getattr\()
+                               object_name
+                               (text  , ")
+                               string
+                               (text "\))
 
 (commnet >=)
 ) undefined
