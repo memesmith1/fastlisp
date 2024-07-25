@@ -1,19 +1,26 @@
 (comment fastlisp sample code)
 
+(comment primitives 
 (comment names)
 (lambda ibis
 (lambda kestrel
 (lambda kite
 (lambda viero
 (lambda z
+
+(comment renaming primitives)
 (lambda if
 (lambda true
 (lambda false
+(lambda pair
 
 (main program)
-viero
+z
 
 (comment definitions)
+
+(comment pair)
+) viero
 
 (comment false)
 ) kite
