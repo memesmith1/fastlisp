@@ -24,11 +24,15 @@
 
 (comment undefined-functions)
 (lambda +
+(lambda -
 
 (main program)
 undefined
 
 (comment definitions)
+
+(comment -)
+) undefined
 
 (comment +)
 ) undefined
