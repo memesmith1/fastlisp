@@ -16,16 +16,20 @@
 (lambda recurse
 (lambda not
 (lambda or
+(lambda and
 
 (main program)
-(comment and)
-(lambda x (lambda y (x y and)))
+(comment first)
+kestrel
+
 
 (comment definitions)
 
+(comment and)
+) (lambda x (lambda y (x y and)))
+
 (comment or)
 ) (lambda x (lambda y (x kestrel y)))
-
 
 (comment not)
 ) (lambda x (x true false))
