@@ -28,11 +28,27 @@
 (lambda *
 (lambda /
 (lambda ^
+(lambda <
+(lambda >
+(lambda <=
+(lambda >=
 
 (main program)
 undefined
 
 (comment definitions)
+
+(commnet >=)
+) undefined
+
+(comment <=)
+) undefined
+
+(comment >)
+) undefined
+
+(comment <) 
+) undefined
 
 (comment ^)
 ) undefined
