@@ -1,12 +1,20 @@
 //if, quote
 
 ibis = lambda x : x
+lambda_if = ibis
+quote = ibis
 
 //true, or, head
 kestrel = lambda x : lambda y x
+lambda_true = kestrel
+lambda_or = lambda x : lambda y : x(kestrel)(y)
+head = lambda list : list(kestrel)
 
 //false, and, tail
-kite = lambda x : lambda y : y
+kite = kestrel(ibis)
+lambda_false = kite
+lambda_and = lambda x : lambda y : x(y)(kestrel)
+tail = lambda list : list(kite)
 
 //pair, cons, tuple
 viero = lambda x : lambda y : lambda z : z(x)(y)
