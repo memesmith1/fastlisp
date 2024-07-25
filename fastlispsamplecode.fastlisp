@@ -22,7 +22,7 @@
 (lambda or
 (lambda and
 
-(comment undefined-functions)
+(comment undefined function names)
 (lambda +
 (lambda -
 (lambda *
@@ -33,10 +33,22 @@
 (lambda <=
 (lambda >=
 
+(comment sample program names)
+(lambda is-old-enough?
+
 (main program)
 undefined
 
 (comment definitions)
+
+(comment is-old-enough?)
+) (lambda age
+          (if (>= age
+                  (text 18)
+               )
+               true
+               false
+))
 
 (commnet >=)
 ) undefined
