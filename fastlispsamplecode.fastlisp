@@ -1,7 +1,7 @@
 (comment fastlisp sample code)
 
 (comment primitives 
-(comment names)
+(comment names
 (lambda ibis
 (lambda kestrel
 (lambda kite
@@ -9,6 +9,7 @@
 (lambda z
 
 (comment renaming primitives)
+(lambda undefined
 (lambda if
 (lambda quote
 (lambda true
@@ -21,10 +22,16 @@
 (lambda or
 (lambda and
 
+(comment undefined-functions)
+(lambda +
+
 (main program)
-ibis
+undefined
 
 (comment definitions)
+
+(comment +)
+) undefined
 
 (comment and)
 ) (lambda x (lambda y (x y and)))
@@ -54,8 +61,14 @@ ibis
 (comment true)
 ) kestrel
 
+(comment quote)
+) ibis
+
 (comment if)
 ) ibis
+
+(comment undefined)
+) kite
 
 (comment z)
 ) (lambda f
@@ -79,9 +92,6 @@ ibis
 ) (lambda x
           (lambda y
                   x))
-
-(comment quote)
-) ibis
 
 (comment ibis)
 ) (lambda x
