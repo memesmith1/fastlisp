@@ -23,6 +23,7 @@
 (lambda and
 
 (comment undefined function names)
+(lambda eval
 (lambda +
 (lambda -
 (lambda *
@@ -89,6 +90,13 @@ undefined
 
 (comment +)
 ) undefined
+
+(comment so basically eval with the current design of fastlisp is unable to be contextually aware of the variable names that we are defining because these veriable names only exist before compile time
+         so if we are going to eval we have to do it with a new fastlisp program unless we use macros.
+)
+(comment eval)
+) (lambda new-fastlisp-program-in-a-string
+          undefined)
 
 (comment and)
 ) (lambda x (lambda y (x y and)))
