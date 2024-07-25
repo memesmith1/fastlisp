@@ -6,9 +6,7 @@
 (lambda kite
 (lambda viero
 (lambda z
-(lambda true
-
-(comment renaming of primative functions)
+(lambda if
 (lambda true
 
 (main program)
@@ -19,6 +17,9 @@ kite
 
 (comment true)
 ) kestrel
+
+(comment if)
+) ibis
 
 (comment z)
 ) (lambda f
