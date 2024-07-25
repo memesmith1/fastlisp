@@ -10,18 +10,19 @@
 
 (comment renaming primitives)
 (lambda if
+(lambda quote
 (lambda true
 (lambda false
 (lambda pair
+(lambda first
+(lambda second
 (lambda recurse
 (lambda not
 (lambda or
 (lambda and
 
 (main program)
-(comment first)
-kestrel
-
+ibis
 
 (comment definitions)
 
@@ -36,6 +37,13 @@ kestrel
 
 (comment recurse)
 ) z
+
+(comment second)
+) kite
+
+(comment first)
+) kestrel
+
 
 (comment pair)
 ) viero
@@ -71,6 +79,9 @@ kestrel
 ) (lambda x
           (lambda y
                   x))
+
+(comment quote)
+) ibis
 
 (comment ibis)
 ) (lambda x
