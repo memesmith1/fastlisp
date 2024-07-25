@@ -3,11 +3,15 @@
 (comment names)
 (lambda ibis
 (lambda kestrel
+(lambda kite
 
 (main program)
-(kestrel ibis)
+(lambda x (lambda y (lambda z (z x y))))
 
 (comment definitions)
+
+(comment kite)
+) (kestrel ibis)
 
 (comment kestrel)
 ) (lambda x
