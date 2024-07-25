@@ -15,12 +15,17 @@
 (lambda pair
 (lambda recurse
 (lambda not
+(lambda or
 
 (main program)
-(comment or)
-(lambda x (lambda y (x kestrel y)))
+(comment and)
+(lambda x (lambda y (x y and)))
 
 (comment definitions)
+
+(comment or)
+) (lambda x (lambda y (x kestrel y)))
+
 
 (comment not)
 ) (lambda x (x true false))
