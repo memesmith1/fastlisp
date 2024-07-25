@@ -13,11 +13,16 @@
 (lambda true
 (lambda false
 (lambda pair
+(lambda recurse
 
 (main program)
-z
+(comment not)
+(lambda x (x true false))
 
 (comment definitions)
+
+(comment recurse)
+) z
 
 (comment pair)
 ) viero
