@@ -8,12 +8,15 @@
 (lambda z
 (lambda if
 (lambda true
+(lambda false
 
 (main program)
-kite
-
+viero
 
 (comment definitions)
+
+(comment false)
+) kite
 
 (comment true)
 ) kestrel
