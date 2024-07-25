@@ -1,11 +1,20 @@
+(comment fastlisp sample code)
+
+(comment names)
 (lambda ibis
+(lambda kestrel
 
 (main program)
-ibis
-
-)
+(kestrel ibis)
 
 (comment definitions)
 
+(comment kestrel)
+) (lambda x
+          (lambda y
+                  x))
+
 (comment ibis)
-(lambda x x)
+) (lambda x
+          x)
+
