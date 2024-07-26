@@ -50,3 +50,38 @@ Fastlisp on its own is capable of eval if the eval has no awareness of anything 
 
 The forwards and backwards compatibility of fastlisp has been deeply considered. Fastlisp should by design run the same way until the end of time except for evaluation order. Fastlisp should be a stateless design that never in theory needs to be updated. Furthermore it should be trivially compatible with other similar systems along the same design philosophy. Fastlisp is designed from the ground up to be able to run on some of the oldest computers and all future computers. Fastlisp is designed to be able to run on any operating system and to be made compatible for any software for which it is possible to be made compatible in as easy a manner as is possible.
 
+fastlisp is licensed to be able to be used in both commercial and in open source endeavors, it has a permissive license that insists the lack of liability of the author should some fool choose to use such a system. fastlisp indeed comes with no warranty of merchantability or fitness. that being said people may make closed source and open source programs and standards with fastlisp.
+
+fastlisp is not only an immutable specification for a language, but it is an immutable language. This means that while the program is running it is statless but could be used to simulate state. This means that some multicore paralellism or concurrency can be gained partially for free by passing fastlisp into the right kind of system.
+
+fastlisp may not be the first successful language of its kind but it is a unique first of its kind language that takes existing software off of the shelf and utilizes it in a novel way.
+
+every fastlisp program is a stateless lambda expression. to compile to another language, merely express the program as a lambda in that language.
+
+fastlisp has no debugger, or compiler messages/warnings/notes, but it is possible to implement these if needed.
+
+generally in fastlisp it is good practice to return a list containing three things: the last working copy of the machine with all of its state, the output of the program, and optionally any instructions that the program wants the outside computer to carry out.
+
+If a language is to be generated besides python, the official way to do this is to use fastlisp to generate python that generates code in that language. This hierarchy helps to simplify the fastlisp ecosystem.
+
+If fastlisp is compiled to a lambda expression in another language like python, and that lambda takes as an input a function that is not a pure lambda, we are no longer talking about a fastlisp lambda. that is no longer a piece of runtime celestial fastlisp, it is a piece of python code. It still shares many of the properites of the fastlisp it once was, but technically it isn't fastlisp. fastlisp is composed of pure lambdas only.
+
+things that are needed: 
+
+* a program written in pure fastlisp that takes a fastlisp program as imput and rewrites it as one long lambda in python
+* some code that takes immutable code from haskell and dumps it into a fastlisp lambda
+* a working version of awk written in pure fastlisp
+* a fastlisp shell
+* fastlisp documenation
+* fastlisp guide for beginner programmers
+* useful libraries in python that are asorbed into fastlisp telestial libraries
+
+in fastlisp there are tiers of fastlisp code named after mormon heavens. subterranian code is code that is not fastlisp. terrestrial code is fastlisp code that directly generates code in another language. telestial fastlisp code is code that depends on terrestrial fastlisp code but where the user might not necessarily need to be aware that they aren't using pure fastlisp. instead, telestial code is ideally seamless with no obvious remnant of the language it depends on in the function interface. Finally, celestial fastlisp code or pure fastlisp code does not depend on any subterranian, terrestrial, or telestial fastlisp code. Only celestial fastlisp code is guaranteed to run the same way until the end of time except for evaluation order.
+
+All fastlisp code depnds on subterranian code to run and operate. However that subterranian code can be generated with fastlisp.
+
+Ideally one day the dependency of python will be removed from the majority of fastlisp codebases.
+
+Fastlisp does not have an object or class system but it is trivial to add one.
+
+For info about fastlisp email me at john.morris.beck@hotmail.com
