@@ -292,6 +292,180 @@ the second thing we wanna do is we wanna convert the strings into lists of boole
 */
 
 
+var convert_character_to_binary_string=character=>character.charCodeAt(0).toString(2);
+
+
+input=new_input;
+new_input="";
+
+var parentheses_depth_counter=0;
+
+for(var i = 0; i < input.length; i++){
+
+    switch(input.charAt(i)){
+
+    case '(':
+	parentheses_depth_counter++;
+
+
+	/*
+	  check to see if the current parentheses in the tree is a comment
+
+	 */
+	var is_text=1;
+	var text_text="(text ";
+	for(var j=0; j <  5 ; j++){
+	    if(text_text.charAt(j) != input.charAt(i+j)){
+		is_text=0;
+	    }
+	}
+
+
+	if(is_text){
+	    /*
+
+	      if it is a string we're going to convert it to a list of booleans
+
+	    */
+
+	    i+=5;
+
+
+	    var continue_parsing_string=1;
+	    for(;continue_parsing_string;i++){
+
+		/*
+
+		  this variable has to be recorded because for each bit in the string we need another
+		  closing parentheses. ideally a better string encoding can be found.
+
+		 */
+		var string_bit_length=0;
+
+		switch(input.charAt(i)){
+
+		case ')':
+
+		    for(var j=0; j<string_bit_length; j++){
+
+			input=input.concat(")");
+		    }
+
+		    continue_parsing_string=0;
+
+		    break;
+
+		case '\\':
+
+		    switch(input.charAt(++i)){
+		    case ')':
+		    case '\\':
+  		 	var binary_string=convert_character_to_binary_string(input.charAt(i));
+			for(var i=0; i < binary_string.length; i++){
+
+			    string_bit_length++;
+			    
+			    switch(binary_string.charAt(i)){
+
+			    case '0':
+
+				input=input.concat("(viero kite ");
+
+				break;
+
+
+			    case '1':
+
+				input = input.concat( "(viero kestrel " );
+
+				break;
+
+			    default:
+				
+				((x=>x/0)(5));
+
+				break;
+
+			    }
+
+			}
+			
+			break;
+
+			    default:
+			    (x=>x / 0)(420);
+
+			    break;
+
+			}
+
+		    break;
+
+		default:
+
+			var binary_string=convert_character_to_binary_string(input.charAt(i));
+			for(var i=0; i < binary_string.length; i++){
+
+			    string_bit_length++;
+			    
+			    switch(binary_string.charAt(i)){
+
+			    case '0':
+
+				input=input.concat("(viero kite ");
+
+				break;
+
+
+			    case '1':
+
+				input = input.concat( "(viero kestrel " );
+
+				break;
+
+			    default:
+				
+				(x=>x/0)(5);
+
+				break;
+
+			    }
+
+			}
+			
+			break;
+
+			}
+
+
+		    break;
+
+
+
+		    }
+
+
+	}
+	else{
+
+	    /*
+	      
+	      if it is not text then we are going to add it to the new_input
+	      
+	    */
+
+	    parentheses_depth_counter++;
+	    new_input=new_input.concat(input.charAt(i));
+	    
+
+	}
+    
+
+    }
+}
+
+    console.log(input);
+
 
 var lambda_true = x=>y=>x;
 var lambda_false = x=>y=>y;
