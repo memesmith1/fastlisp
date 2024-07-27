@@ -1,7 +1,6 @@
 (comment fastlisp sample code)
 
-(comment primitives 
-(comment names
+(comment primitives names)
 (lambda ibis
 (lambda kestrel
 (lambda kite
