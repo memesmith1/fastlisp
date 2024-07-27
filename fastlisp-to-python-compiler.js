@@ -80,7 +80,7 @@ undefined
                                string
                                (text "\))
 
-(commnet >=)
+(comment >=)
 ) undefined
 
 (comment <=)
@@ -228,8 +228,7 @@ for(var i = 0; i < input.length; i++){
 
 	    var comment_parentheses_depth_start=parentheses_depth_counter;
 
-	    for(;parentheses_depth_counter === comment_parentheses_depth_start -1; i++){
-		
+	    for(;parentheses_depth_counter >= comment_parentheses_depth_start; i++){
 
 		switch(input.charAt(i)){
 
@@ -286,7 +285,7 @@ for(var i = 0; i < input.length; i++){
 
 }
 
-console.log(new_input);
+//console.log(new_input);
 
 
 /*
