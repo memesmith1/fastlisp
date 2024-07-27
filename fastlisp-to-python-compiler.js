@@ -16,8 +16,8 @@ THIS SOFTWARE.
 
 var input=`(comment fastlisp sample code)
 
-(comment primitives 
-(comment names
+(comment primitives)
+(comment names)
 (lambda ibis
 (lambda kestrel
 (lambda kite
@@ -195,17 +195,10 @@ for(var i = 0; i < input.length; i++){
     switch(input.charAt(i)){
 
     case '(':
-
-	/*
-	  
-	  update the depth of the parentheses tree we are in
-
-	  */
 	parentheses_depth_counter++;
 
 
 	/*
-
 	  check to see if the current parentheses in the tree is a comment
 
 	 */
@@ -225,11 +218,13 @@ for(var i = 0; i < input.length; i++){
 	      if it is a comment then we are gonna walk down the tree that is inside of the comment and skip it
 
 	    */
+	    var comment_parentheses_depth_end = parentheses_depth_counter - 1  ;
+	    
+	    i++;
 
-	    var comment_parentheses_depth_start=parentheses_depth_counter;
 
-	    for(;parentheses_depth_counter >= comment_parentheses_depth_start; i++){
-
+	    for(;parentheses_depth_counter > comment_parentheses_depth_end; i++){
+	
 		switch(input.charAt(i)){
 
 		case '(':
@@ -262,6 +257,7 @@ for(var i = 0; i < input.length; i++){
 	      
 	    */
 
+	    parentheses_depth_counter++;
 	    new_input=new_input.concat(input.charAt(i));
 	    
 
@@ -273,6 +269,7 @@ for(var i = 0; i < input.length; i++){
     case ')':
 	parentheses_depth_counter--;
 	new_input=new_input.concat(input.charAt(i));
+	break;
 	
     default:
 
@@ -285,7 +282,7 @@ for(var i = 0; i < input.length; i++){
 
 }
 
-//console.log(new_input);
+console.log(new_input);
 
 
 /*
