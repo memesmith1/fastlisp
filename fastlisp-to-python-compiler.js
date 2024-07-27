@@ -56,7 +56,7 @@ var input=`(comment fastlisp sample code)
 (comment sample program names)
 (lambda is-old-enough?
 
-(main program)
+(comment main program)
 undefined
 
 (comment definitions)
@@ -188,6 +188,7 @@ the first thing we wanna do is remove the comments
 */
 
 var new_input="";
+
 var parentheses_depth_counter=0;
 
 for(var i = 0; i < input.length; i++){
@@ -195,8 +196,6 @@ for(var i = 0; i < input.length; i++){
     switch(input.charAt(i)){
 
     case '(':
-	parentheses_depth_counter++;
-
 
 	/*
 	  check to see if the current parentheses in the tree is a comment
@@ -290,7 +289,7 @@ console.log(new_input);
 the second thing we wanna do is we wanna convert the strings into lists of booleans
 
 */
-
+/*
 
 var convert_character_to_binary_string=character=>character.charCodeAt(0).toString(2);
 
@@ -307,11 +306,12 @@ for(var i = 0; i < input.length; i++){
     case '(':
 	parentheses_depth_counter++;
 
-
+*/
 	/*
 	  check to see if the current parentheses in the tree is a comment
 
-	 */
+	*/
+/*
 	var is_text=1;
 	var text_text="(text ";
 	for(var j=0; j <  5 ; j++){
@@ -322,24 +322,31 @@ for(var i = 0; i < input.length; i++){
 
 
 	if(is_text){
+	    console.log("it was text\n");
+
+*/
 	    /*
 
 	      if it is a string we're going to convert it to a list of booleans
 
 	    */
-
+/*
 	    i+=5;
 
 
 	    var continue_parsing_string=1;
 	    for(;continue_parsing_string;i++){
 
+*/
+
 		/*
 
 		  this variable has to be recorded because for each bit in the string we need another
 		  closing parentheses. ideally a better string encoding can be found.
 
-		 */
+		*/
+
+/*
 		var string_bit_length=0;
 
 		switch(input.charAt(i)){
@@ -448,11 +455,15 @@ for(var i = 0; i < input.length; i++){
 	}
 	else{
 
+*/
+
 	    /*
 	      
 	      if it is not text then we are going to add it to the new_input
 	      
 	    */
+
+/*
 
 	    parentheses_depth_counter++;
 	    new_input=new_input.concat(input.charAt(i));
@@ -462,9 +473,41 @@ for(var i = 0; i < input.length; i++){
     
 
     }
+
+
 }
 
-    console.log(input);
+*/
+
+var convert_character_to_binary_string = character => character.charCodeAt(0).toString(2).padStart(8, '0');
+
+input = new_input;
+new_input = "";
+
+
+for (var i = 0; i < input.length; i++) {
+    if (input.startsWith("(text ", i)) {
+	var number_of_closing_parens=0;
+        i += 5;  // Skip "(text "
+        while (input[i] !== ')') {
+            var binary_string = convert_character_to_binary_string(input[i]);
+            for (var bit of binary_string) {
+		number_of_closing_parens++
+                new_input += (bit === '0') ? "(viero kite " : "(viero kestrel ";
+            }
+            i++;
+        }
+	for(var j=0; j < number_of_closing_parens; j++){
+            new_input += ")";
+	}
+    } else {
+        new_input += input[i];
+    }
+}
+
+console.log(new_input);
+
+//    console.log(input);
 
 
 var lambda_true = x=>y=>x;
