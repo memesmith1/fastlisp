@@ -505,11 +505,44 @@ for (var i = 0; i < input.length; i++) {
     }
 }
 
-console.log(new_input);
+
 
 //    console.log(input);
+function replaceNewlinesWithSpaces(input) {
+    return input.replace(/\n/g, ' ');
+}
+
+input=replaceNewlinesWithSpaces(new_input);
+
+function replaceConsecutiveSpacesWithSingleSpace(input) {
+    return input.replace(/\s+/g, ' ');
+}
+
+function replaceLambda(input) {
+    return input.replace(/\(lambda (\w+) /g, '(lambda $1 : ');
+}
+
+function replaceWords(input) {
+    return input
+        .replace(/viero/g, '(viero)')
+        .replace(/kestrel/g, '(kestrel)')
+        .replace(/kite/g, '(kite)');
+}
+
+function removeSpaceBetweenParentheses(input) {
+    return input.replace(/\)\s\(/g, ')(');
+}
+function removeParenthesesAfterLambda(input) {
+    return input.replace(/lambda\s\((\w+)\)\s:/g, 'lambda $1 :');
+}
 
 
+input=replaceConsecutiveSpacesWithSingleSpace(input);
+input=replaceLambda(input);
+input=replaceWords(input);
+input=removeSpaceBetweenParentheses(input);
+input=removeParenthesesAfterLambda(input);
+console.log(input);
 var lambda_true = x=>y=>x;
 var lambda_false = x=>y=>y;
 var lambda_pair = x=>y=>z=>z(x)(y);
