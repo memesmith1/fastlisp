@@ -48,7 +48,7 @@ def main():
         return text
 
     def assign_unique_names(text):
-        ignore_symbols = {')', '(', 'lambda', 'viero', 'kestrel', 'kite'}
+        ignore_symbols = {'(', ')', 'lambda', ':'}
         unique_counter = 1
         symbol_mapping = {}
         
@@ -63,9 +63,31 @@ def main():
                 unique_counter += 1
             return symbol_mapping[symbol]
 
-        # Regex to match symbols (alphanumeric strings)
-        symbol_pattern = re.compile(r'\b\w+\b')
+        # Treat everything between spaces as symbols, including handling special cases
+        symbol_pattern = re.compile(r'\S+')
         return re.sub(symbol_pattern, replace_symbol, text)
+
+    def wrap_symbols(text):
+        ignore_symbols = {'(', ')', 'lambda', ':'}
+        
+        def wrap_symbol(match):
+            symbol = match.group(0)
+            if symbol in ignore_symbols:
+                return symbol
+            return f"( {symbol} )"
+        
+        symbol_pattern = re.compile(r'\S+')
+        return re.sub(symbol_pattern, wrap_symbol, text)
+
+    def unwrap_symbols_after_lambda(text):
+        # Pattern to match "lambda ( symbol )"
+        pattern = re.compile(r'(lambda)\s*\(\s*(\S+)\s*\)')
+        return re.sub(pattern, r'\1 \2', text)
+
+    def insert_colon_after_lambda(text):
+        # Pattern to match "lambda symbol" and add colon after symbol
+        pattern = re.compile(r'(lambda\s+\S+)')
+        return re.sub(pattern, r'\1 :', text)
 
     modified_data = remove_comments(input_data)
     modified_data = replace_text_blocks(modified_data)
@@ -73,6 +95,9 @@ def main():
     modified_data = re.sub(r'\s+', ' ', modified_data)
     modified_data = ensure_spaces_around_parentheses(modified_data)
     modified_data = assign_unique_names(modified_data)
+    modified_data = wrap_symbols(modified_data)
+    modified_data = unwrap_symbols_after_lambda(modified_data)
+    modified_data = insert_colon_after_lambda(modified_data)
 
     print(modified_data.strip(), end='')
 
