@@ -33,6 +33,7 @@ def main():
             text = re.sub(pattern, '', text)
         return text
 
+
     def replace_text_blocks(text):
         pattern = re.compile(r'\(text(.*?)\)', re.DOTALL)
         def replace_match(match):
@@ -88,30 +89,27 @@ def main():
         # Pattern to match "lambda symbol" and add colon after symbol
         pattern = re.compile(r'(lambda\s+\S+)')
         return re.sub(pattern, r'\1 :', text)
-
-
-#steps 4, 4, 5, 7, 8, and 9 should be very trivial to do
-# steps 1, 2, and 6, are where the bugs most likely are in the compiler
-
-
-
+    
     #1.remove comments
-    modified_data = remove_comments(input_data)
     #2. replace text with vieros of kestral and kite
-    modified_data = replace_text_blocks(modified_data)
     #3. change all newline characters to space
-    modified_data = modified_data.replace('\n', ' ')
     #4. for all instnaces of repeated spaces change it to one space
-    modified_data = re.sub(r'\s+', ' ', modified_data)
     #5. make sure there is exactly one space inbetween every symbol
-    modified_data = ensure_spaces_around_parentheses(modified_data)
     #6. for each instance of a new symbol give it a unique name unless it is (, ), kestrel, kite, viero, lambda, or :
-    modified_data = assign_unique_names(modified_data)
     #7. for all symbols except (, ), kestrel, kite, viero, lambda, and : wrap it in parentheses
-    modified_data = wrap_symbols(modified_data)
     #8. if a symbol comes directly after lambda remove the parentehses
-    modified_data = unwrap_symbols_after_lambda(modified_data)
     #9. for the symbol that comes directly after lambda insert " : " after it
+    
+    modified_data = remove_comments(input_data)
+    modified_data = replace_text_blocks(modified_data)
+    modified_data = modified_data.replace('\n', ' ')
+    modified_data = re.sub(r'\s+', ' ', modified_data)
+    modified_data = ensure_spaces_around_parentheses(modified_data)
+    modified_data = assign_unique_names(modified_data)
+    modified_data = wrap_symbols(modified_data)
+    modified_data = unwrap_symbols_after_lambda(modified_data)
+
+
     modified_data = insert_colon_after_lambda(modified_data)
 
     print(modified_data.strip(), end='')
