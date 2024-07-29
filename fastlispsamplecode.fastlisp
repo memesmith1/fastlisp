@@ -1,10 +1,13 @@
 (comment fastlisp sample code)
 
-(comment primitives names)
+(comment names)
+
+(comment primitive names)
 (lambda ibis
 (lambda kestrel
 (lambda kite
 (lambda viero
+(lambda is-nil
 (lambda z
 
 (comment renaming primitives)
@@ -16,10 +19,12 @@
 (lambda pair
 (lambda first
 (lambda second
-(lambda recurse
+(lambda recursion
 (lambda not
 (lambda or
 (lambda and
+
+
 
 (comment undefined function names)
 (lambda eval
@@ -33,37 +38,22 @@
 (lambda <=
 (lambda >=
 
-(comment undefined python functions)
-(lambda get_subobject
 
-(comment sample program names)
-(lambda is-old-enough?
 
-(main program)
-undefined
+
+(comment fastlisppython)
+
+
+(comment main program)
+ibis
+
 
 (comment definitions)
 
-(comment is-old-enough?)
-) (lambda age
-          (if (>= age
-                  (text 18)
-               )
-               true
-               false
-))
+(comment fastlisppython definitions)
 
-(comment get_subobject)
-) (comment text)
-  (lambda object_name
-          (lambda string
-                  (concatenate (text getattr\()
-                               object_name
-                               (text  , ")
-                               string
-                               (text "\))
 
-(commnet >=)
+(comment >=)
 ) undefined
 
 (comment <=)
@@ -90,9 +80,7 @@ undefined
 (comment +)
 ) undefined
 
-(comment so basically eval with the current design of fastlisp is unable to be contextually aware of the variable names that we are defining because these veriable names only exist before compile time
-         so if we are going to eval we have to do it with a new fastlisp program unless we use macros.
-)
+(comment so basically eval with the current design of fastlisp is unable to be contextually aware of the variable names that we are defining because these veriable names only exist before com         pile time so if we are going to eval we have to do it with a new fastlisp program unless we use macros.)
 (comment eval)
 ) (lambda new-fastlisp-program-in-a-string
           undefined)
@@ -106,7 +94,7 @@ undefined
 (comment not)
 ) (lambda x (x true false))
 
-(comment recurse)
+(comment recursion)
 ) z
 
 (comment second)
@@ -143,6 +131,9 @@ undefined
                  (f (lambda v
                             (x x v))))))
 
+(comment is-nil)
+) (lambda l (l (lambda h (lambda t ( lambda d kite))) kestrel))
+
 (comment viero)
 ) (lambda x
           (lambda y
@@ -160,4 +151,3 @@ undefined
 (comment ibis)
 ) (lambda x
           x)
-
