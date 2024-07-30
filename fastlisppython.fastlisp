@@ -1,0 +1,153 @@
+(comment fastlisp sample code)
+
+(comment names)
+
+(comment primitive names)
+(lambda ibis
+(lambda kestrel
+(lambda kite
+(lambda viero
+(lambda is-nil
+(lambda z
+
+(comment renaming primitives)
+(lambda undefined
+(lambda if
+(lambda quote
+(lambda true
+(lambda false
+(lambda pair
+(lambda first
+(lambda second
+(lambda recursion
+(lambda not
+(lambda or
+(lambda and
+
+
+
+(comment undefined function names)
+(lambda eval
+(lambda +
+(lambda -
+(lambda *
+(lambda /
+(lambda ^
+(lambda <
+(lambda >
+(lambda <=
+(lambda >=
+
+
+
+
+(comment fastlisppython)
+
+
+(comment main program)
+ibis
+
+
+(comment definitions)
+
+(comment fastlisppython definitions)
+
+
+(comment >=)
+) undefined
+
+(comment <=)
+) undefined
+
+(comment >)
+) undefined
+
+(comment <) 
+) undefined
+
+(comment ^)
+) undefined
+
+(comment /)
+) undefined
+
+(comment *)
+) undefined
+
+(comment -)
+) undefined
+
+(comment +)
+) undefined
+
+(comment so basically eval with the current design of fastlisp is unable to be contextually aware of the variable names that we are defining because these veriable names only exist before com         pile time so if we are going to eval we have to do it with a new fastlisp program unless we use macros.)
+(comment eval)
+) (lambda new-fastlisp-program-in-a-string
+          undefined)
+
+(comment and)
+) (lambda x (lambda y (x y and)))
+
+(comment or)
+) (lambda x (lambda y (x kestrel y)))
+
+(comment not)
+) (lambda x (x false true))
+
+(comment recursion)
+) z
+
+(comment second)
+) kite
+
+(comment first)
+) kestrel
+
+
+(comment pair)
+) viero
+
+(comment false)
+) kite
+
+(comment true)
+) kestrel
+
+(comment quote)
+) ibis
+
+(comment if)
+) ibis
+
+(comment undefined)
+) kite
+
+(comment z)
+) (lambda f
+        ((lambda x 
+                 (f (lambda v
+                            (x x v))))
+         (lambda x 
+                 (f (lambda v
+                            (x x v))))))
+
+(comment is-nil)
+) (lambda l (l (lambda h (lambda t ( lambda d kite))) kestrel))
+
+(comment viero)
+) (lambda x
+          (lambda y
+                  (lambda z
+                          (z x y))))
+
+(comment kite)
+) (kestrel ibis)
+
+(comment kestrel)
+) (lambda x
+          (lambda y
+                  x))
+
+(comment ibis)
+) (lambda x
+          x)
