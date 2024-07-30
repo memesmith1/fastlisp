@@ -1,0 +1,139 @@
+(comment this contains the church encoding in fastlisp which has an inefficient implementation of integers)
+
+(comment names)
+
+(comment primitive names)
+(lambda ibis
+(lambda kestrel
+(lambda kite
+(lambda viero
+(lambda is-nil
+(lambda z
+
+(comment renaming primitives)
+(lambda undefined
+(lambda if
+(lambda quote
+(lambda true
+(lambda false
+(lambda pair
+(lambda first
+(lambda second
+(lambda recursion
+(lambda not
+(lambda or
+(lambda and
+
+(comment church encoding)
+(lambda 0
+(lambda +
+(lambda +1
+(lambda *
+(lambda ^
+(lambda -1
+(lambda -
+
+
+
+
+(comment fastlisppython)
+ibis
+
+(comment main program)
+
+
+
+(comment definitions)
+
+
+
+(comment church encoding definitions)
+
+(comment 0)
+) (lambda f (lambda x x))
+
+(comment -)
+) (lambda m (lambda (n (n -1) m)))
+
+(comment -1)
+) (lambda n (lambda f (lambda x (n (lambda g (lambda h (h (g f))))(lambda u x)(lambda u u)))))
+
+(comment ^)
+) (lambda m (lambda n (n m)))
+
+(comment multiply)
+) (lambad m (lambda n (lambda f ( lambda x (m (n f) x)))))
+
+(comment plus)
+) (lambda m (lambda n (lambda f (m f (n f x)))))
+
+
+(comment end of church encoding definitions)
+) (lambda n (lambda f (lambda x (f (n f x)))))
+
+(comment and)
+) (lambda x (lambda y (x y and)))
+
+(comment or)
+) (lambda x (lambda y (x kestrel y)))
+
+(comment not)
+) (lambda x (x false true))
+
+(comment recursion)
+) z
+
+(comment second)
+) kite
+
+(comment first)
+) kestrel
+
+
+(comment pair)
+) viero
+
+(comment false)
+) kite
+
+(comment true)
+) kestrel
+
+(comment quote)
+) ibis
+
+(comment if)
+) ibis
+
+(comment undefined)
+) kite
+
+(comment z)
+) (lambda f
+        ((lambda x 
+                 (f (lambda v
+                            (x x v))))
+         (lambda x 
+                 (f (lambda v
+                            (x x v))))))
+
+(comment is-nil)
+) (lambda l (l (lambda h (lambda t ( lambda d kite))) kestrel))
+
+(comment viero)
+) (lambda x
+          (lambda y
+                  (lambda z
+                          (z x y))))
+
+(comment kite)
+) (kestrel ibis)
+
+(comment kestrel)
+) (lambda x
+          (lambda y
+                  x))
+
+(comment ibis)
+) (lambda x
+          x)
