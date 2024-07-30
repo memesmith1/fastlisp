@@ -17,6 +17,7 @@ def convertArrayOfTrueAndFalseToVierosOfKestrelAndKite(boolean_array):
             result.append("(viero kestrel ")
         else:
             result.append("(viero kite ")
+    result.append(" kite ")
     result.append(")" * len(boolean_array))
     return ''.join(result)
 
