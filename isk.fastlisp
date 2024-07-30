@@ -1,4 +1,5 @@
 (comment fastlisp sample code)
+(comment these were computed with https://crypto.stanford.edu/~blynn/lambda/kiselyov.html)
 
 (comment names)
 
