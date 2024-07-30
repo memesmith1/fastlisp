@@ -24,56 +24,71 @@
 (lambda or
 (lambda and
 
+
+
+
+
+
+
+
+
+
+
+
 (comment church encoding)
-(lambda 0
 (lambda +
 (lambda +1
 (lambda *
 (lambda ^
 (lambda -1
 (lambda -
+(lambda 0
 (lambda =0
-
-
-
 
 (comment main program)
 (+1 (+1 (+1 (+1 (+1 (+1 (+1 0)))))))
 
-
-
-
-
 (comment definitions)
-
-
 
 (comment church encoding definitions)
 
-(comment =0)
+(comment iszero)
 ) (lambda n (n (lambda x false) true))
 
-(comment 0)
+(comment zero)
 ) (lambda f (lambda x x))
 
-(comment -)
-) (lambda m (lambda (n (n -1) m)))
+(comment subtract)
+) (lambda m (lambda n (n -1 m)))
 
-(comment -1)
+(comment predecess)
 ) (lambda n (lambda f (lambda x (n (lambda g (lambda h (h (g f))))(lambda u x)(lambda u u)))))
 
-(comment ^)
+(comment exponentiate)
 ) (lambda m (lambda n (n m)))
 
 (comment multiply)
-) (lambad m (lambda n (lambda f ( lambda x (m (n f) x)))))
+) (lambda m (lambda n (lambda f (m (n f)))))
 
-(comment plus)
-) (lambda m (lambda n (lambda f (m f (n f x)))))
+(comment addone)
+) (lambda n (lambda f (lambda x (f (n f x)))))
+
+(comment add)
+) (lambda m (lambda n (lambda f (lambda x (m f (n f x))))))
+
+
+
+
+
+
+
+
+
+
+
 
 
 (comment end of church encoding definitions)
-) (lambda n (lambda f (lambda x (f (n f x)))))
 
 (comment and)
 ) (lambda x (lambda y (x y and)))
