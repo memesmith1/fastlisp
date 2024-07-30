@@ -17,7 +17,7 @@ lambda_and = lambda x : lambda y : x(y)(kestrel)
 tail = lambda list : list(kite)
 
 //not
-lambda_not = lambda x : x(kestrel)(kite)
+lambda_not = lambda x : x(kite)(kestrel)
 
 //pair, cons, tuple
 viero = lambda x : lambda y : lambda z : z(x)(y)
