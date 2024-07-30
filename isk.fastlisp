@@ -1,0 +1,79 @@
+(comment fastlisp sample code)
+
+(comment names)
+
+(comment primitive names)
+(lambda iota
+(lambda ibis
+(lambda kestrel
+(lambda kite
+(lambda starling
+(lambda bluebird
+(lambda dove
+(lambda cardinal
+(lambda thrush
+(lambda viero
+(lambda blackbird
+(lambda eagle
+(lambda robin
+(lambda owl
+(lambda is-nil
+(lambda z
+
+(comment main program)
+iota
+
+(comment z)
+) (starling ((robin (owl ibis) bluebird))((robin (owl ibis)) bluebird))
+
+(comment is-nil)
+) (lambda l (l (lambda h (lambda t ( lambda d kite))) kestrel))
+
+(comment owl)
+) (starling ibis)
+
+(comment robin)
+) (dove thrush)
+
+(comment eagle)
+) (bluebird blackbird)
+
+(comment blackbird)
+) (dove bluebird)
+
+(comment viero)
+) ((bluebird cardinal) thrush) 
+
+(comment thrush)
+) (cardinal ibis)
+
+(comment cardinal)
+) ((starling (dove starling)) (kestrel kestrel))
+
+(comment dove)
+) (bluebird bluebird)
+
+(comment bluebird)
+) ((starling (kestrel starling)) kestrel)
+                          
+(comment starling)
+) (iota kestrel)
+
+(comment kite)
+) (kestrel ibis)
+
+(comment kestrel)
+) (iota (iota ibis))
+
+(comment ibis)
+) (iota iota)
+
+(comment iota)
+) (lambda x
+          (x ((lambda x
+             (lambda y
+             (lambda z
+                     ((x z)( y z))))))
+             (lambda x
+             (lambda y
+                     x))))
