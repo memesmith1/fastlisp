@@ -21,6 +21,7 @@ lambda_not = lambda x : x(kite)(kestrel)
 
 //pair, cons, tuple
 viero = lambda x : lambda y : lambda z : z(x)(y)
+is_nil = (lambda l : (l(lambda h : (lambda t : ( lambda d : kite))) (kestrel)))
 
 //recurse with an argument
 z = lambda f : (lambda x : f(lambda v : x(x)(v)))(lambda x : f(lambda v : x(x)(v)))
