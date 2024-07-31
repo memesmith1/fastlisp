@@ -1,3 +1,5 @@
+#this compiler turns out not to function properly because python lambdas can not handle big complex and deeply nested lambdsa
+#a new compiler must be made
 import sys
 import re
 
