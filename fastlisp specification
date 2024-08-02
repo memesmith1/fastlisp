@@ -1,17 +1,24 @@
-(comment
- fastlisp spec 2.3.1
- 1 jul 2024
- john morris beck
- this is a comment. here we use lambda as let to spawn an environment
- where an object named id is applied to itself twice, then applied to
- a string.)
- (comment these are my names)
-((lambda id 
+(comment fastlisp spec 3
+2 aug 2024
+john morris beck
+this is a comment. here lambda spawns an environment where id equals
+(lamdbda x x). id is self applied twice. the result is applied to a
+string.)
 
-         (comment this is the main program)
-         (id id id)) 
+(comment names)
+(lambda id 
+
+         (comment main)
+         (id id id)
          
-(comment these are my definitions)         
-(lambda x x) 
-(comment the return value of the latter program is applied to this string)
-(text this is a string containing a \). the behavior of \\ is undefined.) text is sugar for pairs of booleans in the lambda calculus. if fastlisp halts it returns a lambda that can guide macro expansion in the outer system extending the syntax.))
+(comment definitions)
+
+(comment id)
+) (lambda x x) 
+
+(text this is a string containing the (right-parentheses) variable.)
+
+(comment the behavior of \ in text is undefined. text can be sugar for
+pairs of booleans in the lambda calculus. if fastlisp halts it returns a
+lambda that can guide macro expansion in the outer system extending the
+syntax.)
