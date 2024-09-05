@@ -1,9 +1,9 @@
-(comment fastlisp spec 3
-2 aug 2024
+(comment fastlisp spec 4
+sep 5 2024
 john morris beck
-this is a comment. here lambda spawns an environment where id equals
-(lamdbda x x). id is self applied twice. the result is applied to a
-string.)
+this is a comment. next, lambda spawns an environment
+where id equals (lamdbda x x). id is self applied
+twice. the result is applied to a string.)
 
 (comment names)
 (lambda id 
@@ -16,9 +16,11 @@ string.)
 (comment id)
 ) (lambda x x) 
 
-(text this is a string containing the (right-parentheses) variable.)
+(text this is a string. hello!)
 
-(comment the behavior of \ in text is undefined. text can be sugar for
-pairs of booleans in the lambda calculus. if fastlisp halts it returns a
-lambda that can guide macro expansion in the outer system extending the
-syntax.)
+(comment the behavior of \, ), and ( in text are 
+undefined. text can be sugar for pairs of booleans
+in the lambda calculus. if fastlisp halts it returns
+a lambda that can guide macro expansion in the outer
+system extending the syntax. a fastlisp compiler
+compiles a fastlisp lambda to blc2.)
