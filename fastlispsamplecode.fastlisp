@@ -86,7 +86,7 @@ ibis
           undefined)
 
 (comment and)
-) (lambda x (lambda y (x y and)))
+) (lambda x (lambda y (x y kite)))
 
 (comment or)
 ) (lambda x (lambda y (x kestrel y)))
