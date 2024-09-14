@@ -1,3 +1,6 @@
+import sys
+import ast
+
 def transform_list(lst):
     # If the list starts with the string "00", return it unchanged
     if lst[0] == "00":
@@ -19,10 +22,13 @@ def transform_tree(tree):
     return transform_list(result)
 
 if __name__ == "__main__":
-    input_code = ["00", ["00", "10110", ["100010", "111001"], "101110"]]
-    
+    # Read input from stdin and parse it as a Python list
+    input_code = sys.stdin.read()
+    tree = ast.literal_eval(input_code)  # Safely parse the input string as Python structure
+
     # Transform the input tree
-    output_code = transform_tree(input_code)
-    
-    # Print the transformed output
+    output_code = transform_tree(tree)
+
+    # Print the transformed output to stdout
     print(output_code)
+
