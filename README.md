@@ -1,6 +1,20 @@
 # fastlisp
 fastlisp is an easiness oriented reduced scripting language. An easiness oriented programming language makes most if not all of it's design decisions to try to make the language easier to teach learn use and extend. One approach to attain easiness is by taking a scripting language that is already easy and reducing it's complexity.
 
+current usage:
+
+Write a program in fastlisp or use the fastlispsamplecode.fastlisp
+
+you can get a blc compiler from here https://justine.lol/lambda/
+
+here is a direct link to a version of the blc compiler: https://justine.lol/lambda/blc?v=3
+
+write in a unix terminal: cat my_fastlisp_program.fastlisp | bash fastlisp-compiler-2.bash | /path/to/blc/compiler
+
+if it says permission denied type: chmod +x /path/to/blc/compiler then try again
+
+******
+
 fastlisp takes the semmantical essense of lisp and reduces it down to a system small enough to fit into the boot sector of a floppy disc. It is designed to be compatible with
 sectorlisp. It's specification fits into a qr code. Because of its extremely small size, it is trivial to memorize the operation of the entire language. This memorization allows the user's knowledge of the language to crystalize earlier on in the process of development, and the goal is that this will help to give it a competitive advantage over traditional lisps in the easy languages category.
 
