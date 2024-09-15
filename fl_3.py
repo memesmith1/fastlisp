@@ -5,9 +5,9 @@ def convert_to_de_bruijn(expr_list, depth=0, context=None):
         context = []
 
     if not isinstance(expr_list, list):
-        # If the element is in the context, return its index
+        # If the element is in the context, return its index (plus 1 to fix the off-by-one error)
         if expr_list in context:
-            return context.index(expr_list)
+            return context.index(expr_list) + 1
         return expr_list
 
     result = []
@@ -26,7 +26,8 @@ def convert_to_de_bruijn(expr_list, depth=0, context=None):
         else:
             # For non-lambda elements, check if they are in the context
             if isinstance(expr_list[i], str) and expr_list[i] in context:
-                result.append(context.index(expr_list[i]))
+                # Add 1 to fix the off-by-one error
+                result.append(context.index(expr_list[i]) + 1)
             else:
                 result.append(convert_to_de_bruijn(expr_list[i], depth, context))
         i += 1
