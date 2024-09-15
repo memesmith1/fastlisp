@@ -40,8 +40,6 @@ Fastlisp is not mathematically consisten but it can be used to generate librarie
 
 Fastlisp does not have a type system but it allows for the creation of any desired type system. Fastlisp does not have the ability to force this type system on the user, however it may be possible to make systems where those systems cannot be interacted with without using said type system or poking memory, thus creating an enforcemnet of type safety.
 
-With the z combinator fastlisp is able to recurse in a strictly typed language without necessarily stack overflowing.
-
 It is suggested to the user that text in fastlisp be sugar for lists of booleans, because this is the most data dense datastrucutre that fastlisp is currently known to be able to host to encode strings. There may be a more data dense method that can be found in binary lambda calculus. Ideally the most data dense possible format should be used to encode strings in fastlisp.
 
 In fastlisp text is meant to encode ints, big ints, floats, big floats, strings, hex data, and essentially anything that isn't a function name.
