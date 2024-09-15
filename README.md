@@ -14,6 +14,10 @@ write in a unix terminal: cat my_fastlisp_program.fastlisp | bash fastlisp-compi
 if it says permission denied type: chmod +x /path/to/blc/compiler then try again
 
 ******
+usage in python:
+
+see this code fastlisp-python-integration-sample-code.py
+*********
 
 fastlisp takes the semmantical essense of lisp and reduces it down to a system small enough to fit into the boot sector of a floppy disc. It is designed to be compatible with
 sectorlisp. It's specification fits into a qr code. Because of its extremely small size, it is trivial to memorize the operation of the entire language. This memorization allows the user's knowledge of the language to crystalize earlier on in the process of development, and the goal is that this will help to give it a competitive advantage over traditional lisps in the easy languages category.
