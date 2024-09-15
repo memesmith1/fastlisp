@@ -23,5 +23,3 @@ if __name__ == "__main__":
 
     # Print the final collapsed string to stdout
     print(result)
-
-
