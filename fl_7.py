@@ -2,9 +2,14 @@ import sys
 import ast
 
 def transform_list(lst):
-    # If the list starts with the string "00", return it unchanged
+    # Check if the list starts with "00"
     if lst[0] == "00":
-        return lst
+        # Only insert "01" if there are multiple items after "00"
+        if len(lst) > 2:
+            prepend = ["01"] * (len(lst) - 2)  # Add "01" for each item after the first one
+            return [lst[0]] + prepend + lst[1:]
+        else:
+            return lst  # No "01" added if only one item follows "00"
     else:
         # Prepend "01" (len(lst) - 1) times to the list
         prepend = ["01"] * (len(lst) - 1)
@@ -31,4 +36,3 @@ if __name__ == "__main__":
 
     # Print the transformed output to stdout
     print(output_code)
-
